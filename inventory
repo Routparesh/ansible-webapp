@@ -1,0 +1,14 @@
+all:
+  hosts:
+    web01:
+      ansible_host: 172.31.2.143
+      ansible_user: ubuntu
+      ansible_ssh_private_key_file: ansible-key-pair.pem
+    web02:
+      ansible_host: 172.31.15.160
+      ansible_user: ubuntu
+      ansible_ssh_private_key_file: ansible-key-pair.pem
+
+    
+
+    

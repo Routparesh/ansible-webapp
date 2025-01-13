@@ -1,0 +1,21 @@
+---
+- name: Install nginx server
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install nginx
+      ansible.builtin.apt:
+         name: nginx
+         state: latest
+
+    - name: Start and enable nginx
+      ansible.builtin.service:
+         name: nginx
+         state: started
+         enabled: yes
+    
+
+    - name: Copy file with owner and permissions
+      ansible.builtin.copy:
+         src: index.html
+         dest: /var/www/html      
